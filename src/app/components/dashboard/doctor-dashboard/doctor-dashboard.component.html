@@ -1,0 +1,28 @@
+<nb-card class="requests">
+  <nb-card-header>Consultation requests</nb-card-header>
+  <nb-card-body
+    class="requests-container"
+    *ngFor="let booking of bookings$ | async"
+  >
+    <app-request-card
+      [booking]="booking"
+      (onStatusChange)="statusChangeHandler($event)"
+    ></app-request-card>
+  </nb-card-body>
+</nb-card>
+
+<nb-card accent="info" class="consultations">
+  <nb-card-body>
+    <a routerLink="/upcoming-consultations">
+      <h1>Upcoming consultations</h1>
+    </a>
+  </nb-card-body>
+</nb-card>
+
+<nb-card accent="info" class="populations">
+  <nb-card-body>
+    <a routerLink="/patients">
+      <h1>Population</h1>
+    </a>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,39 @@
+<ng-container *ngIf="doctor$ | async as doctor">
+  <nb-card id="doc-info">
+    <app-loader *ngIf="!doctor"></app-loader>
+    <nb-list>
+      <nb-list-item>
+        <nb-user
+          name="{{ doctor?.firstName + ' ' + doctor?.lastName }}"
+          title="{{ doctor?.practiceName }}"
+        ></nb-user>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+
+  <nb-card size="medium">
+    <nb-card-body>
+      <input
+        nbInput
+        placeholder="Pick Date"
+        [nbDatepicker]="dateTimePicker"
+        [(ngModel)]="date"
+      />
+      <nb-date-timepicker
+        #dateTimePicker
+        singleColumn
+        [step]="30"
+        [min]="currentDate"
+      ></nb-date-timepicker>
+      <button
+        id="btn"
+        nbButton
+        status="success"
+        (click)="book(doctor)"
+        [disabled]="!date"
+      >
+        Book
+      </button>
+    </nb-card-body>
+  </nb-card>
+</ng-container>

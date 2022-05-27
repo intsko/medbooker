@@ -1,0 +1,49 @@
+:host {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  gap: 1rem;
+}
+
+.doctors-list {
+  position: relative;
+}
+
+.map {
+  height: inherit;
+}
+
+.spinner {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.search-section {
+  input {
+    margin-bottom: 0.5rem;
+  }
+}
+
+nb-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.6rem;
+  text-transform: capitalize;
+}
+
+@media (max-width: 885px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map {
+    height: 40vh;
+  }
+}

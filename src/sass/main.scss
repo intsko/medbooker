@@ -1,0 +1,12 @@
+@import "./abstracts/mixins";
+@import "./base/reset";
+
+.nb-theme-default nb-user.size-medium .user-picture {
+  background-color: #2596be;
+  color: white;
+}
+
+.nb-theme-default nb-user.size-large .user-picture {
+  background-color: #2596be;
+  color: white;
+}

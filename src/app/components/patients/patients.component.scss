@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  gap: 1rem;
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 40%;
+  }
+}
+
+.doctors-list {
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.search-section {
+  input {
+    margin-bottom: 0.5rem;
+  }
+}
+
+nb-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.6rem;
+  text-transform: capitalize;
+}
+
+@media (max-width: 885px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map {
+    height: 40vh;
+  }
+}

@@ -1,0 +1,42 @@
+<nb-reveal-card *ngFor="let booking of bookings$ | async">
+  <nb-card-front>
+    <nb-card accent="info">
+      <nb-card-body>
+        <nb-user
+          [name]="booking | credentials"
+          [title]="booking | getTitle"
+          size="large"
+        >
+        </nb-user>
+        <p>
+          {{ booking?.startTime | date: "EEE d  MMMM h:mm a" }}
+        </p>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+    <nb-card accent="danger">
+      <nb-card-body>
+        <nb-user
+          [name]="booking | credentials"
+          [title]="booking | getTitle"
+          size="large"
+          color="#ff3d71"
+        >
+        </nb-user>
+        <p>{{ status }}</p>
+        <button
+          *ngIf="showButton"
+          nbButton
+          status="info"
+          (click)="cancelBooking(booking.id)"
+        >
+          Cancel Booking
+        </button>
+        <p>
+          {{ booking?.startTime | date: "EEE d  MMMM h:mm a" }}
+        </p>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-back>
+</nb-reveal-card>

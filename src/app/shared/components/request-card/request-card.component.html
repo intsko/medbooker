@@ -1,0 +1,26 @@
+<section *ngIf="booking">
+  <div class="date">
+    <p>{{ booking?.startTime | date: "EEE d  MMMM h:mm a" }}</p>
+  </div>
+  <div class="info">
+    <h3>
+      {{ booking | credentials }}
+    </h3>
+    <div class="btns">
+      <button
+        (click)="updateBooking(status.CONFIRMED, booking.id)"
+        nbButton
+        status="success"
+      >
+        accept
+      </button>
+      <button
+        (click)="updateBooking(status.DECLINED, booking.id)"
+        nbButton
+        status="danger"
+      >
+        reject
+      </button>
+    </div>
+  </div>
+</section>

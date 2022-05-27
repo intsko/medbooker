@@ -1,0 +1,42 @@
+nb-list-item {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    opacity: 0.5;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+
+nb-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    opacity: 0.5;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  nb-card-body {
+    flex-direction: column;
+    align-items: inherit;
+    padding-bottom: 3rem;
+
+    & > * {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  h3 {
+    font-size: 1rem;
+  }
+}

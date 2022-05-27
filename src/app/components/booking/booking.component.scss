@@ -1,0 +1,20 @@
+nb-card {
+  text-align: center;
+}
+
+nb-user {
+  margin: auto;
+}
+
+nb-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}

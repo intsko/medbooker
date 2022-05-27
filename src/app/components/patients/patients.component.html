@@ -1,0 +1,86 @@
+<nb-card class="left" size="large">
+  <nb-card-body>
+    <section class="search-section">
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        status="basic"
+        placeholder="first name"
+        [(ngModel)]="firstName"
+      />
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        status="basic"
+        placeholder="last name"
+        [(ngModel)]="lastName"
+      />
+      <button nbButton fullWidth status="primary" (click)="searchPatient()">
+        Search
+      </button>
+    </section>
+    <section class="doctors-list">
+      <app-loader class="spinner" *ngIf="!patients$"></app-loader>
+      <nb-list>
+        <nb-list-item
+          class="patients-container"
+          *ngFor="let patient of patients$ | async"
+        >
+          <nb-user
+            name="{{ patient.firstName + ' ' + patient.lastName }}"
+          ></nb-user>
+          <button
+            nbButton
+            status="success"
+            id="btn"
+            (click)="createAppointment(patient)"
+          >
+            Create appointment
+          </button>
+        </nb-list-item>
+      </nb-list>
+    </section>
+  </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="patient$ | async as patient" class="right">
+  <section>
+    <nb-list>
+      <nb-list-item>
+        <nb-user
+          name="{{ patient?.firstName + ' ' + patient?.lastName }}"
+        ></nb-user>
+
+        <button
+          nbButton
+          status="success"
+          id="btn"
+          [disabled]="!dateValue"
+          (click)="createBooking(patient)"
+        >
+          Book
+        </button>
+      </nb-list-item>
+    </nb-list>
+
+    <nb-card size="medium">
+      <nb-card-body>
+        <input
+          nbInput
+          placeholder="Pick Date"
+          [nbDatepicker]="dateTimePicker"
+          fullWidth
+          [(ngModel)]="dateValue"
+        />
+        <nb-date-timepicker
+          #dateTimePicker
+          singleColumn
+          [step]="30"
+          [min]="currentDate"
+        ></nb-date-timepicker>
+      </nb-card-body>
+    </nb-card>
+  </section>
+</nb-card>

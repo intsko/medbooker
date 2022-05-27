@@ -1,0 +1,52 @@
+<ng-container *ngIf="doctors$ | async as doctors">
+  <section class="map">
+    <app-google-map
+      [doctorsQuantity]="doctors.length"
+      *ngIf="doctors.length"
+    ></app-google-map>
+  </section>
+  <nb-card>
+    <nb-card-body>
+      <section class="search-section">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          status="basic"
+          placeholder="first name"
+          [(ngModel)]="firstName"
+        />
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          status="basic"
+          placeholder="last name"
+          [(ngModel)]="lastName"
+        />
+        <button nbButton fullWidth status="primary" (click)="searchDoctor()">
+          Search
+        </button>
+      </section>
+      <section class="doctors-list">
+        <app-loader class="spinner" *ngIf="!doctors$"></app-loader>
+        <nb-list>
+          <nb-list-item *ngFor="let doctor of doctors">
+            <nb-user
+              name="{{ doctor.firstName + ' ' + doctor.lastName }}"
+              [title]="doctor.practiceName"
+            ></nb-user>
+            <button
+              nbButton
+              status="success"
+              id="btn"
+              (click)="bookConsultation(doctor.entityNo)"
+            >
+              Book
+            </button>
+          </nb-list-item>
+        </nb-list>
+      </section>
+    </nb-card-body>
+  </nb-card>
+</ng-container>

@@ -1,0 +1,191 @@
+// :host {
+//     // display: flex;
+//     // position: relative;
+// }
+
+// body {
+//     overflow-x: hidden;
+// }
+
+// .nb-theme-default h3 {
+//     line-height: 0 !important;
+// }
+
+// .card {
+//     width: 50%;
+
+//     &.ml {
+//         // position: absolute;
+//         margin-left: 2rem;
+//         height: 100vh;
+//         // right: -100%;
+//     }
+// }
+
+// .section {
+//     display: flex;
+//     align-items: center;
+//     height: 100px;
+//     width: 100%;
+// }
+
+// .border-bottom {
+//     border-bottom: 2px solid #0095ff;
+// }
+
+// .date {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     justify-content: center;
+//     padding-right: 2rem;
+//     height: 100%;
+//     width: 10rem;
+//     border-right: 2px solid #0095ff;
+//     text-align: center;
+
+//     p {
+//         opacity: 0.5;
+//         font-size: 12px;
+//         font-weight: bold;
+//         font-style: italic;
+//     }
+// }
+
+// .info {
+//     padding-left: 2rem;
+//     display: flex;
+
+//     &.details {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         text-align: center;
+//         margin-top: 2rem;
+
+//         .prof-img {
+//             width: 4rem;
+//             height: 4rem;
+//         }
+//     }
+
+//     &.d-column {
+//         flex-direction: column;
+//     }
+
+//     .prof-img {
+//         width: 3rem;
+//         height: 3rem;
+//         background-color: red;
+//         border-radius: 50%;
+//     }
+
+//     h3 {
+//         margin-bottom: 0.5rem;
+//         font-size: 1.5rem;
+//         margin-left: 1rem;
+
+//         &.fullname {
+//             line-height: 0;
+//         }
+//     }
+
+//     .btns {
+//         display: flex;
+//     }
+
+//     button {
+//         // margin-left: 1rem;
+//         cursor: pointer;
+//         text-transform: capitalize;
+//         margin-top: 1rem;
+//     }
+
+//     .reject {
+//         background-color: #ff3d71;
+//     }
+
+//     .accept {
+//         background: rgb(58, 177, 58);
+//     }
+// }
+
+// @media (max-width: 885px) {
+//     .date,
+//     .info {
+//         width: inherit;
+//     }
+
+//     .date {
+//         padding-right: 0;
+//         text-align: center;
+//     }
+// }
+
+// @media (max-width: 755px) {
+//     .date {
+//         width: 5rem;
+//     }
+
+//     .info {
+//         padding-left: 0.5rem;
+//         h3 {
+//             font-size: 1rem;
+//             margin-left: 10px;
+//         }
+//     }
+// }
+
+// @media (max-width: 518px) {
+//     .info {
+//         // h3 {
+//         //     font-size: 1.2rem;
+//         // }
+//     }
+// }
+
+// // width: min-content;
+// // padding-right: 2rem;
+// // padding-left: 2rem;
+
+// nb-list-item {
+//     display: flex;
+//     justify-content: space-between;
+
+//     p {
+//         opacity: 0.5;
+//         font-style: italic;
+//         font-weight: bold;
+//         font-size: 13px;
+//     }
+// }
+
+// nb-card-body {
+//     display: flex;
+//     justify-content: space-between;
+
+//     p {
+//         opacity: 0.5;
+//         font-style: italic;
+//         font-weight: bold;
+//         font-size: 13px;
+//     }
+// }
+
+// @media (max-width: 600px) {
+//     nb-card-body {
+//         flex-direction: column;
+//         align-items: inherit;
+//         padding-bottom: 3rem;
+
+//         & > * {
+//             margin-bottom: 1rem;
+//         }
+//     }
+// }
+
+// @media (max-width: 500px) {
+//     h3 {
+//         font-size: 1rem;
+//     }
+// }
